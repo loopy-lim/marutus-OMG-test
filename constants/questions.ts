@@ -1,3 +1,5 @@
+import { ExtractBrand, ExtractType } from "@/lib/typeHelper";
+
 interface JP {
   _brand: "JP";
   type: "J" | "P";
@@ -11,8 +13,6 @@ interface SN {
   type: "S" | "N";
 }
 
-type ExtractType<T> = T extends { type: infer U } ? U : never;
-type ExtractBrand<T> = T extends { _brand: infer U } ? U : never;
 type AnswerType = ExtractType<JP | EI | SN>;
 type QuestionType = ExtractBrand<JP | EI | SN>;
 
