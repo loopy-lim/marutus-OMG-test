@@ -7,16 +7,15 @@ interface ResultProps {
 }
 
 export default function Home({ searchParams }: ResultProps) {
-  const paramString = Object.keys(searchParams)
-    .map((key) => `${key}=${searchParams[key]}`)
-    .join("&");
-
-  if (
-    !Array.from(
-      { length: QUESTIONS.length },
-      (_, i) => searchParams[i.toString()]
-    ).every((v) => v != null)
-  ) {
+  const answers = Array.from(
+    { length: QUESTIONS.length },
+    (_, i) => searchParams[i.toString()]
+  );
+  if (!answers.every((v) => v != null)) {
+    searchParams["selected"] = answers.findIndex((v) => v == null).toString();
+    const paramString = Object.keys(searchParams)
+      .map((key) => `${key}=${searchParams[key]}`)
+      .join("&");
     redirect(`/play?${paramString}`);
   }
 
