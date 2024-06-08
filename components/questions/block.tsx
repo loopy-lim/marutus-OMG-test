@@ -1,4 +1,4 @@
-import { Question } from "@/constants/questions";
+import { Question, QUESTIONS } from "@/constants/questions";
 import { ElementType, ExtractAnswer } from "@/lib/typeHelper";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
@@ -31,7 +31,7 @@ const AnswerBlock = ({
           query: {
             ...params,
             [questionIndex]: answerIndex,
-            selected: questionIndex + 1,
+            selected: Math.min(questionIndex + 1, QUESTIONS.length - 1),
           },
         }}
         className={cn(

@@ -52,6 +52,7 @@ export const QusetionMoveButtons = ({ api }: QusetionMoveButtonsProps) => {
       <Link
         className="w-full"
         href={{
+          pathname: isLast ? "/result" : "",
           query: {
             ...params,
             selected: Math.min(
@@ -62,7 +63,7 @@ export const QusetionMoveButtons = ({ api }: QusetionMoveButtonsProps) => {
         }}
       >
         <Button
-          className={cn("w-full", isLast && "bg-blue-800 hover:bg-blue-700")}
+          className={cn("w-full", isLast && "bg-blue-700 hover:bg-blue-600")}
         >
           {isLast ? "결과보기" : "앞으로"}
         </Button>

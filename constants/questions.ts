@@ -13,7 +13,7 @@ interface SN {
   type: "S" | "N";
 }
 
-type AnswerType = ExtractType<JP | EI | SN>;
+export type AnswerType = ExtractType<JP | EI | SN>;
 type QuestionType = ExtractBrand<JP | EI | SN>;
 
 export interface Question {
