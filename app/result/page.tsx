@@ -6,7 +6,7 @@ interface ResultProps {
   searchParams: { [key: string]: string };
 }
 
-export default function Home({ searchParams }: ResultProps) {
+export default function ResultPage({ searchParams }: ResultProps) {
   const answers = Array.from(
     { length: QUESTIONS.length },
     (_, i) => searchParams[i.toString()]
@@ -21,7 +21,7 @@ export default function Home({ searchParams }: ResultProps) {
 
   return (
     <div className="absolute min-h-screen w-[420px] right-24 bg-white">
-      <Result />
+      <Result result={answers} />
     </div>
   );
 }
