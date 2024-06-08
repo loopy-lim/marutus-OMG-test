@@ -20,7 +20,7 @@ export default function ResultPage({ searchParams }: ResultProps) {
   }
 
   return (
-    <div className="absolute min-h-screen w-[420px] right-24 bg-white">
+    <div className="md:w-[420px]">
       <Result result={answers} />
     </div>
   );

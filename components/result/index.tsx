@@ -26,6 +26,11 @@ export const Result = ({ result }: ResultProps) => {
 
   return (
     <div className="min-h-screen flex justify-center items-center flex-col p-4">
+      <img
+        src="https://placehold.co/400"
+        alt="tmp"
+        className="w-64 rounded-lg"
+      />
       <div className="text-center">
         <h3 className="font-bold text-2xl my-8">{selectedPerson?.name}</h3>
         <div className="break-keep text-pretty">
