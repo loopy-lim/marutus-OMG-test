@@ -18,6 +18,10 @@ export const QusetionMoveButtons = ({ api }: QusetionMoveButtonsProps) => {
   const searchParams = useSearchParams();
   const params = Object.fromEntries(searchParams.entries());
 
+  const canNext = !Array.from({ length: QUESTIONS.length }, (_, i) =>
+    searchParams.get(`${i}`)
+  ).every((v) => v !== null);
+
   useEffect(() => {
     if (!api) {
       return;
@@ -52,7 +56,7 @@ export const QusetionMoveButtons = ({ api }: QusetionMoveButtonsProps) => {
       <Link
         className="w-full"
         href={{
-          pathname: isLast ? "/result" : "",
+          pathname: isLast && !canNext ? "/result" : "",
           query: {
             ...params,
             selected: Math.min(
@@ -64,6 +68,7 @@ export const QusetionMoveButtons = ({ api }: QusetionMoveButtonsProps) => {
       >
         <Button
           className={cn("w-full", isLast && "bg-blue-700 hover:bg-blue-600")}
+          disabled={isLast && canNext}
         >
           {isLast ? "결과보기" : "앞으로"}
         </Button>

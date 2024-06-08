@@ -1,7 +1,7 @@
 "use client";
 
 import { QUESTIONS } from "@/constants/questions";
-import { QuestionBlock } from "./block";
+import { QuestionBlock } from "./Block";
 import {
   Carousel,
   CarouselApi,
