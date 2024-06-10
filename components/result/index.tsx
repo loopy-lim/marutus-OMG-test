@@ -1,5 +1,7 @@
 import { PERSON } from "@/constants/person";
 import { AnswerType, QUESTIONS } from "@/constants/questions";
+import { Button } from "../ui/button";
+import Link from "next/link";
 
 interface ResultProps {
   result: string[];
@@ -36,6 +38,11 @@ export const Result = ({ result }: ResultProps) => {
         <div className="break-keep text-pretty">
           {`${selectedPerson?.characteristic} ${selectedPerson?.disposition}`}
         </div>
+      </div>
+      <div className="my-4">
+        <Button variant="secondary">
+          <Link href="/">처음으로 돌아가기</Link>
+        </Button>
       </div>
     </div>
   );
