@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export const HomeDescription = () => {
   return (
     <div className="min-h-screen flex justify-center items-center flex-col p-4">
