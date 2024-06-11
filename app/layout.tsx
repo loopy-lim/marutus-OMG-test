@@ -9,6 +9,18 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "마르투스 OMG",
   description: "OMG 테스트를 통해 나의 성향을 알아보자!",
+  openGraph: {
+    type: "website",
+    locale: "ko_KR",
+    images: [
+      {
+        url: "https://omg.ll3.kr/og.jpeg",
+        width: 600,
+        height: 600,
+        alt: "마르투스 OMG",
+      },
+    ],
+  },
 };
 
 interface RootLayoutProps {
