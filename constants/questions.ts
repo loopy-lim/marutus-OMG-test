@@ -344,7 +344,7 @@ export const QUESTIONS: Question[] = [
         type: "N",
       },
       {
-        a: "하나님만을 위해 살아가는 내가 될것이다.(",
+        a: "하나님만을 위해 살아가는 내가 될것이다.",
         type: "N",
       },
       {
