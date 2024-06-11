@@ -46,6 +46,11 @@ export const Result = () => {
     (person) => person.type === `${EI}${SN}${JP}`
   );
 
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(window.location.href);
+    alert("결과를 공유해보세요!");
+  };
+
   return (
     <div className="min-h-screen flex justify-center items-center flex-col p-4">
       <div className="text-center">
@@ -59,9 +64,12 @@ export const Result = () => {
           {`${selectedPerson?.characteristic} ${selectedPerson?.disposition}`}
         </div>
       </div>
-      <div className="my-4">
+      <div className="flex gap-2 my-4">
         <Button className="hover:bg-blue-600 bg-blue-700">
           <Link href="/">처음으로 돌아가기</Link>
+        </Button>
+        <Button variant="secondary" onClick={() => copyToClipboard()}>
+          공유하기
         </Button>
       </div>
     </div>

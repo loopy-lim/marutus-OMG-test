@@ -11,7 +11,7 @@ export const HomeDescription = () => {
 
   return (
     <Carousel
-      className="min-h-screen flex justify-center items-center flex-col p-12 pr-36"
+      className="min-h-screen flex justify-center items-center flex-col p-12 lg:pr-36"
       opts={{ loop: true }}
       plugins={[
         Autoplay({
