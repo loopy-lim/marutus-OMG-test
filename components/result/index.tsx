@@ -49,18 +49,18 @@ export const Result = () => {
   return (
     <div className="min-h-screen flex justify-center items-center flex-col p-4">
       <div className="text-center">
-        <h3 className="font-bold text-2xl my-8">{selectedPerson?.name}</h3>
+        <h3 className="font-bold text-2xl my-4">{selectedPerson?.name}</h3>
         <img
           src={`/images/${selectedPerson?.name}.jpeg`}
           alt={selectedPerson?.name}
-          className="w-64 rounded-lg mx-auto"
+          className="w-4/5 m-4 rounded-lg mx-auto"
         />
-        <div className="break-keep text-pretty">
+        <div className="break-keep text-pretty lg:text-base/7">
           {`${selectedPerson?.characteristic} ${selectedPerson?.disposition}`}
         </div>
       </div>
       <div className="my-4">
-        <Button variant="secondary">
+        <Button className="hover:bg-blue-600 bg-blue-700">
           <Link href="/">처음으로 돌아가기</Link>
         </Button>
       </div>
