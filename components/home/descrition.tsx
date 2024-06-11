@@ -6,7 +6,7 @@ export const HomeDescription = () => {
         <div className="break-keep text-pretty">
           OMG 테스트를 통해 나의 성향을 알아보자!
         </div>
-        <img src="/images/title.jpeg" alt="title" className="rounded-lg w-60" />
+        <img src="/images/title.jpeg" alt="title" className="rounded-lg w-80" />
       </div>
     </div>
   );
