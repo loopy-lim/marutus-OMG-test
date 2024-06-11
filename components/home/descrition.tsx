@@ -5,7 +5,7 @@ import Autoplay from "embla-carousel-autoplay";
 
 export const HomeDescription = () => {
   const carousel = Array.from(
-    { length: 12 },
+    { length: 11 },
     (_, i) => `/images/carousel/${i + 1}.jpeg`
   );
 
