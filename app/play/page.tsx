@@ -1,10 +1,10 @@
-import { QuestionBlocks } from "@/components/questions";
+import { Questions } from "@/components/questions";
 import { Suspense } from "react";
 
 export default function PlayPage() {
   return (
     <Suspense>
-      <QuestionBlocks />
+      <Questions />
     </Suspense>
   );
 }

@@ -13,7 +13,7 @@ import { useSearchParams } from "next/navigation";
 import { QusetionMoveButtons } from "./Move";
 import { QuestionProgressBar } from "./Progress";
 
-export const QuestionBlocks = () => {
+export const Questions = () => {
   const [api, setApi] = useState<CarouselApi>();
   const searchParams = useSearchParams();
   const params = Object.fromEntries(searchParams.entries());
