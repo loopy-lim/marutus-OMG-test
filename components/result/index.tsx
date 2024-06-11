@@ -1,14 +1,34 @@
+"use client";
+
 import { PERSON } from "@/constants/person";
 import { AnswerType, QUESTIONS } from "@/constants/questions";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
-interface ResultProps {
-  result: string[];
-}
+export const Result = () => {
+  const param = useSearchParams();
+  const searchParams = Object.fromEntries(param);
+  const router = useRouter();
 
-export const Result = ({ result }: ResultProps) => {
-  const types = result
+  const answers = Array.from(
+    { length: QUESTIONS.length },
+    (_, i) => searchParams[i.toString()]
+  );
+
+  useEffect(() => {
+    if (!answers.every((v) => v != null)) {
+      searchParams["selected"] = answers.findIndex((v) => v == null).toString();
+      const paramString = Object.keys(searchParams)
+        .map((key) => `${key}=${searchParams[key]}`)
+        .join("&");
+      router.push(`/question?${paramString}`);
+    }
+  }, [answers, router, searchParams]);
+
+  const types = answers
     .map((v, i) => {
       const question = QUESTIONS[i];
       return question.answer[parseInt(v)].type;
