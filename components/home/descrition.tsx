@@ -1,13 +1,35 @@
+"use client";
+
+import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+
 export const HomeDescription = () => {
+  const carousel = Array.from(
+    { length: 12 },
+    (_, i) => `/images/carousel/${i + 1}.jpeg`
+  );
+
   return (
-    <div className="min-h-screen flex justify-center items-center flex-col p-4">
-      <div className="flex flex-col gap-4 text-center items-center">
-        <h3 className="font-bold text-2xl my-4">마르투스 OMG</h3>
-        <div className="break-keep text-pretty">
-          OMG 테스트를 통해 나의 성향을 알아보자!
-        </div>
-        <img src="/images/title.jpeg" alt="title" className="rounded-lg w-80" />
-      </div>
-    </div>
+    <Carousel
+      className="min-h-screen flex justify-center items-center flex-col p-12 pr-36"
+      opts={{ loop: true }}
+      plugins={[
+        Autoplay({
+          delay: 5000,
+        }),
+      ]}
+    >
+      <CarouselContent>
+        {carousel.map((src, index) => (
+          <CarouselItem key={index}>
+            <img
+              src={src}
+              alt={`${index} carousel`}
+              className="max-h-[calc(100vh-96px)] mx-auto rounded-lg"
+            />
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+    </Carousel>
   );
 };
