@@ -48,12 +48,15 @@ export const Result = () => {
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(window.location.href);
-    alert("결과를 공유해보세요!");
+    alert("링크 복사 완료!\n붙여넣기로 결과를 공유해보세요!");
   };
 
   return (
     <div className="min-h-screen flex justify-center items-center flex-col p-4">
       <div className="text-center">
+        <div className="font-semibold">
+          {searchParams["name"] ?? "김마르투스"}님의 결과는!
+        </div>
         <h3 className="font-bold text-2xl my-4">{selectedPerson?.name}</h3>
         <img
           src={`/images/${selectedPerson?.name}.jpeg`}
@@ -61,7 +64,10 @@ export const Result = () => {
           className="w-4/5 m-4 rounded-lg mx-auto"
         />
         <div className="break-keep text-pretty lg:text-base/7">
-          {`${selectedPerson?.characteristic} ${selectedPerson?.disposition}`}
+          {selectedPerson?.characteristic}{" "}
+          <span className="underline underline-offset-2 decoration-blue-600 font-bold text-blue-600">
+            {selectedPerson?.disposition}
+          </span>
         </div>
       </div>
       <div className="flex gap-2 my-4">
