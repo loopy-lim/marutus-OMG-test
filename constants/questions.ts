@@ -253,7 +253,7 @@ export const QUESTIONS: Question[] = [
         type: "S",
       },
       {
-        a: "나는 밥 먹으면서 외우게 될 송구암송이 기대돼!",
+        a: "나는 밥 먹으면서 외우게 될 성구암송이 기대돼!",
         type: "N",
       },
       {
