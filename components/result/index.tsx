@@ -28,6 +28,23 @@ export const Result = () => {
     }
   }, [answers, router, searchParams]);
 
+  useEffect(() => {
+    const controller = new AbortController();
+    const {signal} = controller;
+    const paramString = Object.keys(searchParams)
+        .map((key) => `${key}=${searchParams[key]}`)
+        .join("&");
+    fetch('https://marutus-omg-server.loopy.workers.dev/', {
+      signal,
+      method: 'POST',
+      body: JSON.stringify({'answers': paramString})
+    })
+
+    return () => {
+      controller.abort();
+    }
+  }, [])
+
   const types = answers
     .map((v, i) => {
       const question = QUESTIONS[i];
